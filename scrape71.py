@@ -63,15 +63,6 @@ def make_json():
     orgs_2016_2017 = orgs2016 + orgs2017
     dump_json(orgs_2016_2017, JSON_FNAME)
 
-    # print(len(orgs_2016_2017))
-    # for o in orgs_2016_2017:
-    #     for key in o:
-    #         print(key)
-    #         print(o[key])
-    #         print()
-    #     print()
-    #     print()
-
 
 if __name__ == '__main__':
     make_json()

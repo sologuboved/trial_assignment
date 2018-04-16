@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from basic_operations import dump_json
+from basic_operations import dump_utf_json
 
 JSON_FNAME = 'sonko71.json'
 URL2017 = 'http://nko71.ru/gospodderzhka/oblastnye-granty/reestr-sonko-poluchateley-podderzhki-2017-god.html'
@@ -61,7 +61,7 @@ def make_json():
     orgs2016 = scrape(url=URL2016, beg=5, diff=3, field=COMMENT, field_n_a=VIOLATIONS)
     orgs2017 = scrape(url=URL2017, beg=6, diff=2, field=VIOLATIONS, field_n_a=COMMENT)
     orgs_2016_2017 = orgs2016 + orgs2017
-    dump_json(orgs_2016_2017, JSON_FNAME)
+    dump_utf_json(orgs_2016_2017, JSON_FNAME)
 
 
 if __name__ == '__main__':

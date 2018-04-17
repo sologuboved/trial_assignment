@@ -7,6 +7,7 @@ PREFIX = 'http://nko71.ru'
 PAGE_POSTFIX = '?PAGEN_1='
 RAW_JSON_FNAME = 'raw_ngo71.json'
 URL_JSON_FNAME = 'url_ngo71.json'
+DELIMITER = '*+*'
 
 SOURCE = 'source'
 ORGNAME = 'orgname'
@@ -45,7 +46,7 @@ def scrape_org(url):
         elif header in (MISSION, OPF, HEAD, CONTACTS, MUNICIPALITY):
             postfix = ' '
         else:
-            postfix = '*+*'
+            postfix = DELIMITER
         info = str()
         for tag in raw_header.next_siblings:
             if tag.name == "h3":

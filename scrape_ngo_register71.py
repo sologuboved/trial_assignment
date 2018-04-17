@@ -6,7 +6,6 @@ INITIAL_URL = 'http://nko71.ru/katalog-nko/'
 PREFIX = 'http://nko71.ru'
 PAGE_POSTFIX = '?PAGEN_1='
 RAW_JSON_FNAME = 'raw_ngo71.json'
-JSON_FNAME = 'ngo71.json'
 URL_JSON_FNAME = 'url_ngo71.json'
 
 SOURCE = 'source'
@@ -100,7 +99,7 @@ def dump_urls():
     dump_utf_json(scrape_urls(), URL_JSON_FNAME)
 
 
-def dump_orgs():
+def dump_raw_orgs():
     orgs = list()
     urls = load_utf_json(URL_JSON_FNAME)
     ind = -1
@@ -115,5 +114,5 @@ def dump_orgs():
 
 
 if __name__ == '__main__':
-    # dump_orgs()
+    # dump_raw_orgs()
     pass

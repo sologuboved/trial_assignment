@@ -31,9 +31,11 @@ MAPPER = ('regnum',  # номер реестровой записи
 
 def dump_orgs():
     orgs = list()
+
     for year in range(2012, 2018):
         print("Parsing %d..." % year)
         orgs.extend(parse_xls(year))
+
     dump_utf_json(orgs, JSON_FNAME)
 
 
@@ -83,6 +85,6 @@ if __name__ == '__main__':
     #     print('**************************')
     #     print()
 
-    dump_orgs()
+    # dump_orgs()
 
     pass

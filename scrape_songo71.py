@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from basic_operations import dump_utf_json
 
-JSON_FNAME = 'sonko71.json'
+JSON_FNAME = 'songo71.json'
 URL2017 = 'http://nko71.ru/gospodderzhka/oblastnye-granty/reestr-sonko-poluchateley-podderzhki-2017-god.html'
 URL2016 = 'http://nko71.ru/gospodderzhka/oblastnye-granty/reestr-sonko-poluchateley-podderzhki.html'
 SOURCE = 'source'

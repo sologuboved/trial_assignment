@@ -111,12 +111,9 @@ def dump_orgs():
         print(org[ORGNAME])
         print()
         orgs.append(org)
-    dump_utf_json(orgs, JSON_FNAME)
+    dump_utf_json(orgs, RAW_JSON_FNAME)
+
 
 if __name__ == '__main__':
-    # print(scrape_org('http://nko71.ru/katalog-nko/nko-po-gruppam-naseleniya/vse-kategorii-grazhdan/bogoroditskoe-gorodskoe-kazache-obshchestvo.html'))
-    # print(scrape_org('http://nko71.ru/katalog-nko/nko-po-gruppam-naseleniya/vse-kategorii-grazhdan/vostochno-evropeyskiy-institut-ekonomiki-upravleniya-i-prava.html'))
-    # print(scrape_org('http://nko71.ru/katalog-nko/nko-po-gruppam-naseleniya/invalidy/tulskoe-regionalnoe-otdelenie-obshcherossiyskoy-obshchestvennoy-organizatsii-novye-vozmozhnosti.html'))
-    dump_orgs()
-
-
+    # dump_orgs()
+    pass

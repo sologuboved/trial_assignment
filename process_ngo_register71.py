@@ -8,12 +8,14 @@ TARGETS = 'targets'
 ACTIVITIES = 'activities'
 PROJECTS = 'projects'
 SERVICES = 'services'
+CODES = 'codes'
+OGRN = 'ogrn'
 
 
 def dump_orgs():
     orgs = load_utf_json(RAW_JSON_FNAME)
     for org in orgs:
-        for rubric in [TARGETS, ACTIVITIES, PROJECTS, SERVICES]:
+        for rubric in [TARGETS, ACTIVITIES, PROJECTS, SERVICES, CODES]:
             item = org[rubric]
             if item:
                 org[rubric] = str_to_list(item)

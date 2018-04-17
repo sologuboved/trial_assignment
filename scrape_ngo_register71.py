@@ -25,7 +25,7 @@ HEADERS = {MISSION: 'mission',
            'Услуги': 'services',
            OPF: 'opf',
            HEAD: 'head',
-           'Реквизиты': 'codes',
+           'Реквизиты': 'raw_codes',
            CONTACTS: 'contacts',
            MUNICIPALITY: 'municipality'}
 
@@ -115,5 +115,5 @@ def dump_raw_orgs():
 
 
 if __name__ == '__main__':
-    # dump_raw_orgs()
-    pass
+    dump_raw_orgs()
+    # pass

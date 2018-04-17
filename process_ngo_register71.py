@@ -10,7 +10,7 @@ TARGETS = 'targets'
 ACTIVITIES = 'activities'
 PROJECTS = 'projects'
 SERVICES = 'services'
-CODES = 'codes'
+CODES = 'raw_codes'
 OGRN = 'ogrn'
 
 
@@ -58,7 +58,8 @@ def check_ogrns():
         print(org[OGRN])
         print()
 
+
 if __name__ == '__main__':
-    # dump_orgs()
+    dump_orgs()
     check_ogrns()
     pass

@@ -60,6 +60,6 @@ def check_ogrns():
 
 
 if __name__ == '__main__':
-    dump_orgs()
+    # dump_orgs()
     check_ogrns()
     pass

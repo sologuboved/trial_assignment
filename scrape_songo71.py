@@ -65,4 +65,4 @@ def make_json():
 
 
 if __name__ == '__main__':
-    make_json()
+    pass

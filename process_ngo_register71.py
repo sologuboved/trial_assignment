@@ -1,8 +1,8 @@
 import re
 from basic_operations import load_utf_json, dump_utf_json
 
-RAW_JSON_FNAME = 'raw_ngo71.json'
-JSON_FNAME = 'ngo71.json'
+RAW_JSON_FNAME = 'data/raw_ngo71.json'
+JSON_FNAME = 'data/ngo71.json'
 DELIMITER = '*+*'
 
 SOURCE = 'source'
@@ -40,7 +40,7 @@ def str_to_list(string):
 
 def find_ogrn(codes):
     for code in codes:
-        pattern = r'ОГРН[^0-9]*([0-9]*)'
+        pattern = r'ОГРН[^0-9]*([0-9]+)'
         try:
             ogrn = re.findall(pattern, code)[0]
         except IndexError:
@@ -60,6 +60,6 @@ def check_ogrns():
 
 
 if __name__ == '__main__':
-    # dump_orgs()
+    dump_orgs()
     check_ogrns()
     pass

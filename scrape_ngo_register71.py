@@ -5,8 +5,8 @@ from basic_operations import dump_utf_json, load_utf_json
 INITIAL_URL = 'http://nko71.ru/katalog-nko/'
 PREFIX = 'http://nko71.ru'
 PAGE_POSTFIX = '?PAGEN_1='
-RAW_JSON_FNAME = 'data/raw_ngo71.json'
-URL_JSON_FNAME = 'data/url_ngo71.json'
+RAW_JSON_FNAME = 'raw_ngo71.json'
+URL_JSON_FNAME = 'url_ngo71.json'
 DELIMITER = '*+*'
 
 SOURCE = 'source'

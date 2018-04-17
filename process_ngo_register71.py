@@ -5,6 +5,7 @@ RAW_JSON_FNAME = 'raw_ngo71.json'
 JSON_FNAME = 'ngo71.json'
 DELIMITER = '*+*'
 
+SOURCE = 'source'
 TARGETS = 'targets'
 ACTIVITIES = 'activities'
 PROJECTS = 'projects'
@@ -27,6 +28,8 @@ def dump_orgs():
             org[OGRN] = find_ogrn(codes)
         else:
             org[OGRN] = None
+        if org[SOURCE] == 'http://nko71.ru/katalog-nko/nko-po-uslugam/sotsialnaya-pomoshch-i-podderzhka/nasledie.html':
+            org[OGRN] = '1097100001129'
 
     dump_utf_json(orgs, JSON_FNAME)
 
@@ -45,11 +48,17 @@ def find_ogrn(codes):
         return ogrn
 
 
+def check_ogrns():
+    ind = 0
+    orgs = load_utf_json(JSON_FNAME)
+    for org in orgs:
+        ind += 1
+        print(ind)
+        print(org[SOURCE])
+        print(org[OGRN])
+        print()
+
 if __name__ == '__main__':
-    c = [
-      "ИНН:7106042469",
-      "Код ОКПО (Росстат):57387361",
-      "Код ОКАТО:70401375000"
-    ]
-    # print(find_ogrn(c))
-    dump_orgs()
+    # dump_orgs()
+    check_ogrns()
+    pass

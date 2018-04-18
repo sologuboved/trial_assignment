@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
     # dump_orgs()
 
-    random.seed(10)
-    check_orgs(20)
+    # random.seed(10)
+    # check_orgs(20)
 
     pass

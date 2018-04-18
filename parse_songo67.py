@@ -4,7 +4,8 @@ http://www.xn--67-1lclg.xn--p1ai/baza-dannyx-o-so-nko/reestr-so-nko-poluchatelej
 """
 
 from xlrd import open_workbook
-from basic_operations import dump_utf_json
+from basic_operations import dump_utf_json, load_utf_json
+import random
 
 XLS_FNAME = 'sources/songo67_{}.xls'
 JSON_FNAME = 'data/songo67.json'
@@ -14,19 +15,26 @@ AMOUNT = 'amount'
 OGRN = 'ogrn'
 INN = 'inn'
 VIOLATIONS = 'violations'
+REGNUM = 'regnum'
+DATEDECISION = 'datedecision'
+ORGNAME = 'orgname'
+POSTADDRESS = 'postaddress'
+ACTIVITIES = 'activities'
+FORM = 'form'
+TERM = 'term'
 
-MAPPER = ('regnum',  # номер реестровой записи
-          'datedecision',  # дата принятия решения об оказании поддержки или о прекращении оказания поддержки
-          'orgname',  # наименование постоянно действующего органа НКО
-          'postaddress',  # почтовый адрес (место нахождения) постоянно действующего органа НКО
+MAPPER = (YEAR,  # год
+          REGNUM,  # номер реестровой записи
+          DATEDECISION,  # дата принятия решения об оказании поддержки или о прекращении оказания поддержки
+          ORGNAME,  # наименование постоянно действующего органа НКО
+          POSTADDRESS,  # почтовый адрес (место нахождения) постоянно действующего органа НКО
           OGRN,  # ОГРН
           INN,  # ИНН
-          'activities',  # виды деятельности НКО
-          'form',  # формы поддержки
+          ACTIVITIES,  # виды деятельности НКО
+          FORM,  # формы поддержки
           AMOUNT,  # размер поддержки
-          'term',  # сроки оказания поддержки
-          'violations',  # информация (если имеется) о нарушениях
-          YEAR)  # год
+          TERM,  # сроки оказания поддержки
+          VIOLATIONS)  # информация (если имеется) о нарушениях
 
 
 def dump_orgs():
@@ -74,6 +82,23 @@ def parse_xls(year):
         return orgs
 
 
+def check_orgs(num):
+    orgs = load_utf_json(JSON_FNAME)
+    rand_inds = (random.randrange(0, len(orgs)) for _ in range(num))
+    ind = -1
+    for rand_ind in rand_inds:
+        ind += 1
+        print(ind, '-', rand_ind)
+        rand_org = orgs[rand_ind]
+        for field in MAPPER:
+            print(field)
+            print(rand_org[field])
+            print()
+        print()
+        print('************')
+        print()
+
+
 if __name__ == '__main__':
     # songos = parse_xls(2017)
     # for songo in songos:
@@ -86,5 +111,8 @@ if __name__ == '__main__':
     #     print()
 
     # dump_orgs()
+
+    random.seed(10)
+    check_orgs(20)
 
     pass
